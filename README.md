@@ -5,19 +5,19 @@
 
 **预览图**
 
-![首页](./src/assets/preview1.jpg "首页")
+![首页](https://cdn.jsdelivr.net/gh/ledtwo/eggNews@1.0/src/assets/preview1.jpg "首页")
 
 ***
 
-![详情页](./src/assets/preview2.jpg "详情页")
+![详情页](https://cdn.jsdelivr.net/gh/ledtwo/eggNews@1.0/src/assets/preview2.jpg "详情页")
 
 ***
 
-![左滑操作文章队列](./src/assets/preview3.jpg "左滑操作文章队列")
+![左滑操作文章队列](https://cdn.jsdelivr.net/gh/ledtwo/eggNews@1.0/src/assets/preview3.jpg "左滑操作文章队列")
 
 ***
 
-![添加文章](./src/assets/preview4.jpg "添加文章预览")
+![添加文章](https://cdn.jsdelivr.net/gh/ledtwo/eggNews@1.0/src/assets/preview4.jpg "添加文章预览")
 
 
 ## **前端项目文件结构**
