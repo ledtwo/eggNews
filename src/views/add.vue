@@ -38,8 +38,7 @@ export default {
     async handleEditImg() {
       if (this.$route.query.id) {
         this.id = this.$route.query.id;
-        fetch(`/details/${this.id}`)
-          .then((res) => res.json())
+        fetch(`/api/getArticle/${this.id}`)
           .then((res) => {
             if (res.success) {
               let data = res.data;
@@ -96,9 +95,9 @@ export default {
         logo: this.logo,
         date: moment().format(),
       };
-      let url = "/create";
+      let url = "/api/create";
       if (this.id) {
-        url = "/update";
+        url = "/api/edit";
         data.id = parseInt(this.id);
       }
       fetch(url, {
@@ -108,7 +107,6 @@ export default {
         },
         body: JSON.stringify(data),
       })
-        .then((res) => res.json())
         .then((res) => {
           if (res.success) {
             if (this.id) {
@@ -152,9 +150,10 @@ export default {
 </script>
 
 <style scoped>
-/* .article-add {
-  margin-top: 60px;
-} */
+.article-add {
+  text-align: center;
+  /* margin-top: 60px; */
+}
 .needLogo{
   background: #adadad36;
   /* background: url('../assets/twoP.jpg') no-repeat center; */

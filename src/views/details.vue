@@ -1,3 +1,10 @@
+<!--
+ * @description: 
+ * @Author: ljc
+ * @Date: 2020-09-26 15:52:14
+ * @LastEditors: ljc
+ * @LastEditTime: 2020-10-31 16:17:39
+-->
 <template>
   <div id="details">
     <van-nav-bar title="详情" left-text="返回" left-arrow @click-left="onClickLeft" />
@@ -31,8 +38,7 @@ export default {
     let id = this.$route.query.id;
     if (id) {
       // 异步更新数据
-      fetch(`/details/${id}`)
-        .then((res) => res.json())
+      fetch(`/api/getArticle/${id}`)
         .then((res) => {
           if (res.success) {
             this.list = res.data;
@@ -50,6 +56,7 @@ export default {
 <style scoped>
 #details {
   padding-bottom: 80px;
+  text-align: center;
 }
 .arc-title {
   font-size: 1.2em;

@@ -1,11 +1,21 @@
+/*
+ * @description: 
+ * @Author: ljc
+ * @Date: 2020-09-26 10:58:09
+ * @LastEditors: ljc
+ * @LastEditTime: 2020-10-28 09:49:08
+ */
 module.exports = {
   lintOnSave: false,
   devServer: {
     proxy: {
-      "/": {
-        target: "http://localhost:7001/",
+      "/api": {
+        target: "http://localhost:7001",
         ws: true,
         changeOrigin: true,
+        pathRewrite:{
+          '^/api':'/api'
+        }
       },
     },
   },

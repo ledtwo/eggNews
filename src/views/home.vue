@@ -77,13 +77,12 @@ export default {
     },
     async onLoad() {
       // 异步更新数据
-      fetch("/lists")
-        .then((res) => res.json())
+      fetch("/api/getLists?page=1&pageSize=50")
         .then((res) => {
           if (res.success) {
             this.loading = false;
             this.finished = true;
-            this.list = res.data;
+            this.list = res.data.results;
           } else {
             Toast.fail(res.errMsg);
           }
@@ -98,8 +97,7 @@ export default {
       });
     },
     handleDel(id) {
-      fetch(`/delete/${id}`)
-        .then((res) => res.json())
+      fetch(`/api/del?id=${id}`)
         .then((res) => {
           if (res.success) {
             Toast.success("删除文章成功！");
@@ -124,6 +122,7 @@ export default {
 <style scoped>
 .home {
   padding-bottom: 80px;
+  text-align: center;
 }
 .box-right {
   text-align: left;
